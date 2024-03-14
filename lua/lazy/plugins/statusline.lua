@@ -4,6 +4,7 @@ return {
   opts = {
     sections = {
       lualine_c = {},
+      lualine_x = { 'filetype' },
     },
     options = {
       icons_enabled = false,
