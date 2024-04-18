@@ -3,6 +3,8 @@ return {
   event = 'VeryLazy',
   keys = {
     { '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', desc = 'Toggle pin' },
+    { '<leader>br', '<Cmd>BufferLineCloseRight<CR>', desc = 'Delete [B]uffers to the [R]ight' },
+    { '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', desc = 'Delete [B]uffers to the [L]eft' },
     { '<S-h>', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev buffer' },
     { '<S-l>', '<cmd>BufferLineCycleNext<cr>', desc = 'Next buffer' },
   },
