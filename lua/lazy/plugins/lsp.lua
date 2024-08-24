@@ -15,18 +15,37 @@ return {
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
+        local telescope = require 'telescope.builtin'
+        local function has_value(tab, val)
+          for _, value in ipairs(tab) do
+            if value == val then
+              return true
+            end
+          end
+          return false
+        end
+
+        local tsmap = {
+          'typescript',
+          'typescriptreact',
+          'javascript',
+          'javascriptreact',
+        }
         local map = function(keys, func, desc)
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
-        map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
         map('gs', function()
-          vim.cmd 'TSToolsGoToSourceDefinition'
+          if has_value(tsmap, vim.bo.filetype) then
+            vim.cmd 'TSToolsGoToSourceDefinition'
+          else
+            telescope.lsp_definitions()
+          end
         end, '[G]o To [S]ource Definition')
-        map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-        map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-        map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-        map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-        map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+        map('gr', telescope.lsp_references, '[G]oto [R]eferences')
+        map('gI', telescope.lsp_implementations, '[G]oto [I]mplementation')
+        map('<leader>D', telescope.lsp_type_definitions, 'Type [D]efinition')
+        map('<leader>ds', telescope.lsp_document_symbols, '[D]ocument [S]ymbols')
+        map('<leader>ws', telescope.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
         map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
         map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
