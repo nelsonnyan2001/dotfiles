@@ -1,8 +1,8 @@
 return {
   -- Set colorscheme
-  'ellisonleao/gruvbox.nvim',
+  'EdenEast/nightfox.nvim',
   priority = 1000,
   init = function()
-    vim.cmd.colorscheme 'gruvbox'
+    vim.cmd.colorscheme 'nordfox'
   end,
 }
