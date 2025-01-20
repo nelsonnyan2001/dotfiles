@@ -4,7 +4,25 @@ return {
   build = ':TSUpdate',
   config = function()
     require('nvim-treesitter.configs').setup {
-      ensure_installed = { 'bash', 'c', 'go', 'gomod', 'gowork', 'gosum', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'css' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'go',
+        'gomod',
+        'gowork',
+        'gosum',
+        'html',
+        'lua',
+        'markdown',
+        'vim',
+        'vimdoc',
+        'css',
+        'typescript',
+        'tsx',
+        -- clojure
+        'fennel',
+        'clojure',
+      },
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
