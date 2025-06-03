@@ -2,9 +2,9 @@ return {
   -- Autoformat
   'stevearc/conform.nvim',
   opts = {
-    notify_on_error = false,
+    notify_on_error = true,
     format_on_save = {
-      timeout_ms = 1000,
+      timeout_ms = 2500,
       lsp_fallback = true,
     },
     formatters = {

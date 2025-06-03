@@ -1,6 +1,6 @@
 -- Set <space> as the leader key
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ','
 
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
@@ -60,3 +60,6 @@ vim.opt.hidden = true
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4

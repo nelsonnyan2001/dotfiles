@@ -1,5 +1,4 @@
-return {
-  -- Set colorscheme
+return { -- Set colorscheme
   'ellisonleao/gruvbox.nvim',
   priority = 1000,
   init = function()

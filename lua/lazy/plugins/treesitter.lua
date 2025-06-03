@@ -1,7 +1,7 @@
 return {
   -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
-  build = ':TSUpdate',
+  run = ':TSUpdate',
   config = function()
     require('nvim-treesitter.configs').setup {
       ensure_installed = {
@@ -19,7 +19,6 @@ return {
         'css',
         'typescript',
         'tsx',
-        -- clojure
         'fennel',
         'clojure',
       },

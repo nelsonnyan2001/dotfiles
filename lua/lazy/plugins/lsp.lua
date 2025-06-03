@@ -117,6 +117,7 @@ return {
       cssls = {},
       cssmodules_ls = {},
       eslint = {},
+      astro = {},
 
       lua_ls = {
         -- cmd = {...},
