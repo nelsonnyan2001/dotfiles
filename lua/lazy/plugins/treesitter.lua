@@ -6,7 +6,9 @@ return {
     require('nvim-treesitter.configs').setup {
       ensure_installed = {
         'bash',
+        'clojure',
         'c',
+        'fennel',
         'go',
         'gomod',
         'gowork',
@@ -19,8 +21,6 @@ return {
         'css',
         'typescript',
         'tsx',
-        'fennel',
-        'clojure',
       },
       auto_install = true,
       highlight = { enable = true },

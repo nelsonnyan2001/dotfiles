@@ -15,7 +15,4 @@ lazy.setup({
     enabled = true,
     notify = false,
   },
-  rocks = {
-    hererocks = true,
-  },
 })
