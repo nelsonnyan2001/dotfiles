@@ -1,5 +1,6 @@
 return {
   'Olical/conjure',
+
   init = function()
     vim.g['conjure#client_on_load'] = false
     vim.keymap.set('n', '<localleader>cc', vim.cmd.ConjureConnect, { desc = 'ConjureConnect' })

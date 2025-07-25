@@ -58,7 +58,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
           '%.svg',
           -- dirs
           '^node_modules/',
-          'suber.web',
           '^.git/',
         },
       },

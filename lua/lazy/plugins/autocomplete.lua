@@ -3,7 +3,7 @@ return {
   {
     -- Autocompletion
     'saghen/blink.cmp',
-    event = 'VimEnter',
+    event = 'VeryLazy',
     dependencies = {
       {
         'L3MON4D3/LuaSnip',
